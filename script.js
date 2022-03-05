@@ -1,6 +1,7 @@
 const container = document.querySelector('.container');
 const resetBtn = document.querySelector('.reset-btn');
 
+
 function createGrid(gridSize) {
     for (let i = 0; i < gridSize; i++) {
         let rowContainer = document.createElement('div');
@@ -10,7 +11,7 @@ function createGrid(gridSize) {
         for (j = 0; j < gridSize; j++) {
             let div = document.createElement('div');
             div.classList.add('pixel');
-            div.addEventListener("mouseover", addHoverClass);
+            div.addEventListener("mouseover", colorCell);
             rowContainer.appendChild(div);
         }
     }
@@ -34,6 +35,10 @@ function resetBoard() {
     }
     removeDivs();
     createGrid(gridSize);
+}
+
+function colorCell(event) {
+    event.currentTarget.style.backgroundColor = pickRandomColor();
 }
 
 function pickRandomColor() {
