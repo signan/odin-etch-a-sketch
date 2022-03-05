@@ -36,7 +36,16 @@ function resetBoard() {
     createGrid(gridSize);
 }
 
+function pickRandomColor() {
+    return `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`
+}
+
 
 resetBtn.addEventListener("click", resetBoard);
 
 createGrid(50);
+
+console.log(pickRandomColor());
+console.log(pickRandomColor());
+console.log(pickRandomColor());
+console.log(pickRandomColor());
