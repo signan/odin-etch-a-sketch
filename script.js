@@ -47,7 +47,13 @@ function resetBoard() {
 
 // changes the div's bg to a random color through inline styling
 function colorCell(event) {
-    event.currentTarget.style.backgroundColor = pickRandomColor();
+    // only color blank cells. this is to prevent recoloring already colored cells
+    if (event.currentTarget.style.backgroundColor) {
+        return;
+    }
+    else {
+        event.currentTarget.style.backgroundColor = pickRandomColor();
+    }
 }
 
 // picks a random color
